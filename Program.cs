@@ -23,17 +23,17 @@ namespace mopa
                     break;
                 }
                 else if(guessNumber > randNumb){
-                    Console.WriteLine("Du gissade för högt!");
+                    Console.WriteLine("Du gissade för höööögt!");
                 }
                 else{
-                    Console.WriteLine("Du gissade för lågt!");
+                    Console.WriteLine("Du gissade för låååågt!");
                 }
                 tries++;
             }
 
-            Console.Write("Grattis! Du gissade rätt. Det tog ");
+            Console.Write("Congrats! Du gissade rätt. Det tog ");
             Console.Write(tries);
-            Console.WriteLine(" försök.");
+            Console.WriteLine(" försök :).");
             
             
 
