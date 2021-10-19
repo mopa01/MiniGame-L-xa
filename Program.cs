@@ -1,36 +1,41 @@
-﻿using System;
+using System;
 
-namespace minigame
+namespace mopa
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Random random = new Random();
-            int returnvalue = random.Next(1, 100);
+            Random rand = new Random();
+            int randNumb = rand.Next(1, 101);
+            int tries = 1;
 
-            Console.WriteLine(" Gissa en nummer mellan 1 - 100");
-            int response = Convert.ToInt32(Console.ReadLine());
+            while(true){
+                Console.Write("Gissa ett heltal");
+                string guess = Console.ReadLine();
+                int guessNumber;
+                if(int.TryParse(guess, out guessNumber) == false){
+                    Console.WriteLine("Det där var inte ett heltal!");
+                    continue;
+                }
 
-            while (response > returnvalue)
-            {
-                Console.WriteLine($"Wrong the number is lower than {response} try again !");
-                response = Convert.ToInt32(Console.ReadLine());
+                if(guessNumber == randNumb){
+                    break;
+                }
+                else if(guessNumber > randNumb){
+                    Console.WriteLine("Du gissade för högt!");
+                }
+                else{
+                    Console.WriteLine("Du gissade för lågt!");
+                }
+                tries++;
             }
 
-            while (response < returnvalue)
-            {
-                Console.WriteLine($"Wrong the number is higher than {response} try again !");
-                response = Convert.ToInt32(Console.ReadLine());
-            }
-
-            while (response != returnvalue)
-            {
-                Console.WriteLine($" Wrong answer {response} is not the good response try again !");
-                response = Convert.ToInt32(Console.ReadLine());
-            }
-
-            Console.WriteLine($"Bingo ! Its  {returnvalue}");
+            Console.Write("Grattis! Du gissade rätt. Det tog ");
+            Console.Write(tries);
+            Console.WriteLine(" försök.");
+            
+            
 
         }
     }
