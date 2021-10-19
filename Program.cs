@@ -11,7 +11,7 @@ namespace mopa
             int tries = 1;
 
             while(true){
-                Console.Write("Gissa ett heltal");
+                Console.Write("--> Gissa ett heltal ; ");
                 string guess = Console.ReadLine();
                 int guessNumber;
                 if(int.TryParse(guess, out guessNumber) == false){
@@ -33,7 +33,7 @@ namespace mopa
 
             Console.Write("Congrats! Du gissade rätt. Det tog ");
             Console.Write(tries);
-            Console.WriteLine(" försök :).");
+            Console.WriteLine(" försök :)");
             
             
 
